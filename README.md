@@ -1,11 +1,11 @@
 # Pwn
 
-**TODO: Add description**
+Tooling for hacking in Elixir.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `pwn` to your list of dependencies in `mix.exs`:
+Pwn is not yet published. When it is, you'll be able to add it to your project
+as:
 
 ```elixir
 def deps do
@@ -15,7 +15,12 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pwn](https://hexdocs.pm/pwn).
+For now, though, if you want some pwn tools, pull in this dependency in git:
 
+```elixir
+def deps do
+  [
+    {:pwn, git: "git@github.com:the-mikedavis/pwn.git"}
+  ]
+end
+```
