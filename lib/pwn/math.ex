@@ -61,11 +61,20 @@ defmodule Pwn.Math do
     {last_remainder, last_x * if(a < 0, do: -1, else: 1)}
   end
 
-  defp extended_gcd(last_remainder, 0, last_x, _, _, _), do: {last_remainder, last_x}
+  defp extended_gcd(last_remainder, 0, last_x, _, _, _),
+    do: {last_remainder, last_x}
 
   defp extended_gcd(last_remainder, remainder, last_x, x, last_y, y) do
     quotient = div(last_remainder, remainder)
     remainder2 = rem(last_remainder, remainder)
-    extended_gcd(remainder, remainder2, x, last_x - quotient * x, y, last_y - quotient * y)
+
+    extended_gcd(
+      remainder,
+      remainder2,
+      x,
+      last_x - quotient * x,
+      y,
+      last_y - quotient * y
+    )
   end
 end
